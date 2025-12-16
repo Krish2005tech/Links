@@ -50,7 +50,38 @@ function LinkCard({ icon: Icon, title, description, url, isDark }) {
 }
 
 export default function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  const links = [
+    {
+      id: 1,
+      icon: Github,
+      title: "GitHub",
+      description: "Check out my open source projects and contributions",
+      url: "https://github.com/krish2005tech"
+    },
+    {
+      id: 2,
+      icon: Linkedin,
+      title: "LinkedIn",
+      description: "Connect with me professionally",
+      url: "https://linkedin.com/in/krish-teckchandani"
+    },
+    {
+      id: 3,
+      icon: Globe,
+      title: "Portfolio Website",
+      description: "View my complete portfolio and case studies",
+      url: "https://yourwebsite.com"
+    },
+    {
+      id: 4,
+      icon: Code,
+      title: "Project: Cool App",
+      description: "A full-stack application built with React and Node.js",
+      url: "https://your-project.com"
+    }
+  ];
 
   return (
     <div className={`min-h-screen py-12 px-4 transition-colors duration-300 ${
@@ -77,9 +108,9 @@ export default function App() {
         {/* Profile Section */}
         <div className="text-center mb-8">
           <img
-            src="https://avatars.githubusercontent.com/u/your_profile_picture"
+            src="/me.jpg"
             alt="Profile"
-            className="w-28 h-28 rounded-2xl mx-auto mb-4 shadow-lg object-cover border-4 border-white"
+            className="w-42 h-42 rounded-2xl mx-auto mb-4 shadow-lg object-cover border-4 border-white"
           />
           <h1 className={`text-3xl font-bold mb-2 ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>
             Your Name
@@ -91,37 +122,16 @@ export default function App() {
 
         {/* Links Section */}
         <div className="space-y-3">
-          <LinkCard
-            icon={Github}
-            title="GitHub"
-            description="Check out my open source projects and contributions"
-            url="https://github.com/yourusername"
-            isDark={isDark}
-          />
-          
-          <LinkCard
-            icon={Linkedin}
-            title="LinkedIn"
-            description="Connect with me professionally"
-            url="https://linkedin.com/in/yourprofile"
-            isDark={isDark}
-          />
-          
-          <LinkCard
-            icon={Globe}
-            title="Portfolio Website"
-            description="View my complete portfolio and case studies"
-            url="https://yourwebsite.com"
-            isDark={isDark}
-          />
-          
-          <LinkCard
-            icon={Code}
-            title="Project: Cool App"
-            description="A full-stack application built with React and Node.js"
-            url="https://your-project.com"
-            isDark={isDark}
-          />
+          {links.map((link) => (
+            <LinkCard
+              key={link.id}
+              icon={link.icon}
+              title={link.title}
+              description={link.description}
+              url={link.url}
+              isDark={isDark}
+            />
+          ))}
         </div>
       </div>
     </div>
