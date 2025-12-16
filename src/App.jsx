@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Github, Linkedin, Globe, Code, Moon, Sun } from "lucide-react";
+import { Github, Linkedin, Globe, Code, Moon, Sun, Mail, Twitter, Instagram, Youtube, Music, Camera } from "lucide-react";
 
-function LinkCard({ icon: Icon, title, description, url, isDark }) {
+function LinkCard({ icon: Icon,iconType="lucide", title, description, url, isDark }) {
   return (
     <a
       href={url}
@@ -19,7 +19,25 @@ function LinkCard({ icon: Icon, title, description, url, isDark }) {
             ? 'bg-gradient-to-br from-gray-700 to-gray-600 group-hover:from-blue-900 group-hover:to-indigo-900'
             : 'bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100'
         }`}>
-          <Icon className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
+          {iconType === "lucide" ? (
+            (() => {
+              // const Icon = icon;
+              return <Icon className={`w-6 h-6 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />;
+            })()
+          ) : iconType === "svg" ? (
+            <img 
+              src={Icon} 
+              alt="" 
+              className={`w-6 h-6 ${isDark ? 'brightness-0 invert opacity-80' : 'opacity-90'}`}
+              style={{
+                filter: isDark 
+                  ? 'brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(2466%) hue-rotate(188deg) brightness(96%) contrast(91%)'
+                  : 'brightness(0) saturate(100%) invert(32%) sepia(95%) saturate(1686%) hue-rotate(199deg) brightness(91%) contrast(101%)'
+              }}
+            />
+          ) : (
+            <img src={icon} alt="" className="w-full h-full object-cover" />
+          )}
         </div>
         
         <div className="flex-1 min-w-0">
@@ -55,14 +73,16 @@ export default function App() {
   const links = [
     {
       id: 1,
-      icon: Github,
+      icon: "src/assets/github.svg",
       title: "GitHub",
+      iconType: "svg",
       description: "Check out my open source projects and contributions",
       url: "https://github.com/krish2005tech"
     },
     {
       id: 2,
-      icon: Linkedin,
+      icon: "src/assets/linkedin.svg",
+      iconType: "svg",
       title: "LinkedIn",
       description: "Connect with me professionally",
       url: "https://linkedin.com/in/krish-teckchandani"
@@ -113,10 +133,10 @@ export default function App() {
             className="w-42 h-42 rounded-2xl mx-auto mb-4 shadow-lg object-cover border-4 border-white"
           />
           <h1 className={`text-3xl font-bold mb-2 ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>
-            Your Name
+        Krish Teckchandani
           </h1>
           <p className={`text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Short bio / tagline goes here.
+       Hi, I’m <b>Krish</b> : a developer who loves exploring new tech, building small projects, breaking things, and learning along the way.
           </p>
         </div>
 
@@ -127,6 +147,7 @@ export default function App() {
               key={link.id}
               icon={link.icon}
               title={link.title}
+              iconType={link.iconType}
               description={link.description}
               url={link.url}
               isDark={isDark}
