@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Github, Linkedin, Globe, Code, Moon, Sun, Mail, Twitter, Instagram, Youtube, Music, Camera } from "lucide-react";
+// import { Github, Linkedin, Globe, Code, Moon, Sun, Mail, Twitter, Instagram, Youtube, Music, Camera } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, Moon, Sun, Globe, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
+
 
 function LinkCard({ icon: Icon,iconType="lucide", title, description, url, isDark }) {
   return (
@@ -36,7 +38,13 @@ function LinkCard({ icon: Icon,iconType="lucide", title, description, url, isDar
               }}
             />
           ) : (
-            <img src={icon} alt="" className="w-full h-full object-cover" />
+   <img
+  src={Icon}
+  alt=""
+  className="w-full h-full object-cover"
+  // style={{ filter: isDark ? "invert(1)" : "none" }}
+/>
+
           )}
         </div>
         
@@ -70,38 +78,82 @@ function LinkCard({ icon: Icon,iconType="lucide", title, description, url, isDar
 export default function App() {
   const [isDark, setIsDark] = useState(true);
 
-  const links = [
-    {
-      id: 1,
-      icon: "src/assets/github.svg",
-      title: "GitHub",
-      iconType: "svg",
-      description: "Check out my open source projects and contributions",
-      url: "https://github.com/krish2005tech"
-    },
-    {
-      id: 2,
-      icon: "src/assets/linkedin.svg",
-      iconType: "svg",
-      title: "LinkedIn",
-      description: "Connect with me professionally",
-      url: "https://linkedin.com/in/krish-teckchandani"
-    },
-    {
-      id: 3,
-      icon: Globe,
-      title: "Portfolio Website",
-      description: "View my complete portfolio and case studies",
-      url: "https://yourwebsite.com"
-    },
-    {
-      id: 4,
-      icon: Code,
-      title: "Project: Cool App",
-      description: "A full-stack application built with React and Node.js",
-      url: "https://your-project.com"
-    }
-  ];
+const links = [
+  {
+    id: 1,
+    icon: "src/assets/github.svg",
+    iconType: "svg",
+    title: "GitHub",
+    description: "Open source projects, experiments, and contributions",
+    url: "https://github.com/krish2005tech"
+  },
+  {
+    id: 2,
+    icon: "src/assets/linkedin.svg",
+    iconType: "svg",
+    title: "LinkedIn",
+    description: "Professional profile and connections",
+    url: "https://linkedin.com/in/krish-teckchandani"
+  },
+  {
+    id: 3,
+    icon: Mail,
+    title: "Email",
+    description: "Get in touch with me directly",
+    url: "mailto:Krish_Teckchandani@krish2005.tech"
+  },
+  {
+    id: 4,
+    icon: FileText,
+    title: "Resume",
+    description: "My web-based resume and experience",
+    url: "https://resume.krish2005.tech"
+  },
+  {
+    id: 5,
+    icon: BookOpen,
+    title: "Blog",
+    description: "My personal digital journal and thoughts",
+    url: "https://blog.krish2005.tech"
+  },
+  {
+    id: 6,
+    icon: MessageCircle,
+    title: "Chat Room",
+    description: "A simple real-time chatroom application",
+    url: "https://chat.krish2005.tech"
+  },
+  id:9,
+  icon: File,
+  title: "PDF Tools",
+  description: "Secure, client-side PDF tools with no uploads",
+  url: "https://pdf.krish2005.tech"
+},
+  {
+    id: 7,
+    icon: Calendar,
+    title: "Timetable Generator",
+    description: "Generate timetables from a course list",
+    url: "https://timetable.krish2005.tech"
+  },
+  {
+    id: 8,
+    icon: Brain,
+    title: "Neural Car Simulation",
+    description: "A JavaScript neural network that drives a car",
+    url: "https://car.krish2005.tech"
+  },
+  {
+  {
+    id: 10,
+    icon: "src/assets/ignus.png",
+    iconType:"img",
+    title: "IGNUS 25 Website",
+    description: "Official website built for IGNUS 2025 fest",
+    url: "https://ignus-25.vercel.app/"
+  }
+];
+
 
   return (
     <div className={`min-h-screen py-12 px-4 transition-colors duration-300 ${
