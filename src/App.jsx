@@ -35,7 +35,7 @@ function LinkCard({ icon: Icon, iconType = "lucide", title, description, url, is
           ) : (
             <img
               src={Icon}
-              alt=""
+              alt={title}
               className="w-full h-full object-cover"
             />
           )}
@@ -74,7 +74,7 @@ export default function App() {
   const links = [
     {
       id: 1,
-      icon: "src/assets/github.svg",
+      icon: "/assets/github.svg",
       iconType: "svg",
       title: "GitHub",
       description: "Open source projects, experiments, and contributions",
@@ -82,7 +82,7 @@ export default function App() {
     },
     {
       id: 2,
-      icon: "src/assets/linkedin.svg",
+      icon: "/assets/linkedin.svg",
       iconType: "svg",
       title: "LinkedIn",
       description: "Professional profile and connections",
@@ -139,7 +139,7 @@ export default function App() {
     },
     {
       id: 10,
-      icon: "src/assets/ignus.png",
+      icon: "/assets/ignus.png",
       iconType: "img",
       title: "IGNUS 25 Website",
       description: "Official website built for IGNUS 2025 fest",
