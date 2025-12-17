@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, FileText, Moon, Sun, Globe, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, Moon, Sun, Globe,KeyRound, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
 
 function LinkCard({ icon: Icon, iconType = "lucide", title, description, url, isDark }) {
   return (
@@ -131,6 +131,13 @@ export default function App() {
       url: "https://timetable.krish2005.tech"
     },
     {
+      id: 11,
+      icon: KeyRound,
+      title: "JWT Decoder/Encoder",
+      description: "Decode and encode JSON Web Tokens easily",
+      url: "https://jwt.krish2005.tech"
+    },
+    {
       id: 8,
       icon: Brain,
       title: "Neural Car Simulation",
@@ -144,7 +151,7 @@ export default function App() {
       title: "IGNUS 25 Website",
       description: "Official website built for IGNUS 2025 fest",
       url: "https://ignus-25.vercel.app/"
-    }
+    },
   ];
 
   return (
