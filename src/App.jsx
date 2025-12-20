@@ -10,7 +10,7 @@ function LinkCard({ icon: Icon, iconType = "lucide", title, description, url, is
       className={`block rounded-xl p-4 md:p-5 shadow-sm hover:shadow-md transition-all duration-200 border group ${
         isDark 
           ? 'bg-gray-800 border-gray-700 hover:border-blue-500' 
-          : 'bg-white border-gray-100 hover:border-blue-200'
+          : 'bg-white border-gray-200 hover:border-blue-400'
       }`}
     >
       <div className="flex items-start gap-4">
@@ -188,7 +188,9 @@ export default function App() {
           <img
             src="/me.jpg"
             alt="Profile"
-            className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl mx-auto mb-4 md:mb-5 lg:mb-6 shadow-lg object-cover border-4 border-white"
+            className={`w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl mx-auto mb-4 md:mb-5 lg:mb-6 shadow-lg object-cover border-4 ${
+              isDark ? 'border-white' : 'border-blue-300'
+            }`}
           />
           <h1 className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>
             Krish Teckchandani
