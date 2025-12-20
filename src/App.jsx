@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, FileText, Moon, Sun, Globe,KeyRound, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, Moon, Sun,FileBraces, Globe,KeyRound, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
 
 function LinkCard({ icon: Icon, iconType = "lucide", title, description, url, isDark }) {
   return (
@@ -137,6 +137,13 @@ export default function App() {
       description: "Decode and encode JSON Web Tokens easily",
       url: "https://jwt.krish2005.tech"
     },
+    {
+  id: 12,
+  icon: FileBraces,
+  title: "API Tester",
+  description: "Simple HTTP APIs request tool",
+  url: "https://apitester.krish2005.tech"
+},
     {
       id: 8,
       icon: Brain,
