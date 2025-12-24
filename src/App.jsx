@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, FileText, Moon, Sun,FileBraces, Globe,KeyRound, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, Moon, Sun,FileBraces,BotMessageSquare, Globe,KeyRound, BookOpen, MessageCircle, Calendar, Brain, File, Flame } from "lucide-react";
 
 function LinkCard({ icon: Icon, iconType = "lucide", title, description, url, isDark }) {
   return (
@@ -144,6 +144,14 @@ export default function App() {
   description: "Simple HTTP APIs request tool",
   url: "https://apitester.krish2005.tech"
 },
+{
+  id: 13,
+  icon: BotMessageSquare,
+  title: "RAG Q&A",
+  description: "Ask questions directly related to academic regulations",
+  url: "https://rag.krish2005.tech"
+},
+
     {
       id: 8,
       icon: Brain,
